@@ -21,5 +21,12 @@ class ShopController extends Controller
         $goods = $goods->getAllGoods();
         return $this->render('index', compact('goods'));;
     }
+
+    public function actionView($id)
+    {
+        $goods = new Good();
+        $goods = $goods->getGoodsCategories($id);
+        return $this->render('index', compact('goods'));;
+    }
     
 }
